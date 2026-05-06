@@ -1,0 +1,69 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+
+
+# Environment / Secrets
+.env
+.env.*
+*.env
+
+# Spring Boot config with real passwords
+backend/src/main/resources/application.yml
+backend/src/main/resources/application.yaml
+backend/src/main/resources/application.properties
+
+# But allow example config files
+!backend/src/main/resources/application-example.yml
+!backend/src/main/resources/application-example.yaml
+!backend/src/main/resources/application-example.properties
+
+# But allow example config files
+!backend/src/main/resources/application-example.yml
+!backend/src/main/resources/application-example.properties
+
+
+# Java / Spring Boot / Maven
+
+backend/target/
+backend/.mvn/timing.properties
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# Keep Maven wrapper files if they exist
+!backend/mvnw
+!backend/mvnw.cmd
+!backend/.mvn/wrapper/maven-wrapper.properties
+
+
+# Frontend / React / Vite
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+
+# Keep package files
+!frontend/package.json
+!frontend/package-lock.json
+
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+
+# OS generated files
+ehthumbs.db
+Desktop.ini
+
+
+# Database / Local files
+*.db
+*.sqlite
+*.sqlite3
