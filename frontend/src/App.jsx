@@ -11,6 +11,10 @@ import UserDashboard from "./pages/user/UserDashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import RoleRoute from "./components/RoleRoute";
 
+import Leads from "./pages/admin/Leads";
+import LeadForm from "./pages/admin/LeadForm";
+import LeadDetails from "./pages/admin/LeadDetails";
+
 const DashboardRedirect = () => {
   const { user, isAuthenticated } = useAuth();
 
@@ -89,6 +93,51 @@ function App() {
             </RoleRoute>
           }
         />
+
+        <Route
+  path="/dashboard"
+  element={
+    <ProtectedRoute>
+      <AdminDashboard />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/leads"
+  element={
+    <ProtectedRoute>
+      <Leads />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/leads/new"
+  element={
+    <ProtectedRoute>
+      <LeadForm />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/leads/:id"
+  element={
+    <ProtectedRoute>
+      <LeadDetails />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/leads/:id/edit"
+  element={
+    <ProtectedRoute>
+      <LeadForm />
+    </ProtectedRoute>
+  }
+/>
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
